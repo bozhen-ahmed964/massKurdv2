@@ -15,23 +15,33 @@
     <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-black">
         <ul class="space-y-2 font-medium">
             <li>
-                <x-side-link><i class="fa-solid fa-chart-pie"></i> Dashboard</x-side-link>
+                <x-side-link href="{{ route('dashboardPage') }}" :active="request()->is('dashboard')"><i
+                        class="fa-solid fa-chart-pie"></i> Dashboard
+                </x-side-link>
             </li>
             <li>
-                <x-side-link> <i class="fa-solid fa-user-group"></i> Member</x-side-link>
+                <x-side-link href="{{ route('memberPage') }}" :active="request()->is('member')"><i
+                        class="fa-solid fa-user-group"></i> Member
+                </x-side-link>
             </li>
             <li>
-                <x-side-link> <i class="fa-solid fa-user-doctor"></i> Trainer</x-side-link>
+                <x-side-link href="{{ route('trainerPage') }}" :active="request()->is('trainer')"><i
+                        class="fa-solid fa-user-doctor"></i> Trainer
+                </x-side-link>
             </li>
             <li>
-                <x-side-link> <i class="fa-solid fa-dumbbell"></i> Exercise</x-side-link>
+                <x-side-link href="{{ route('exercisePage') }}" :active="request()->is('exercise')"><i
+                        class="fa-solid fa-dumbbell"></i> Exercise
+                </x-side-link>
             </li>
             <li>
-                <x-side-link> <i class="fa-regular fa-pen-to-square"></i> Report </x-side-link>
-
+                <x-side-link href="{{ route('reportPage') }}" :active="request()->is('report')"><i
+                        class="fa-regular fa-pen-to-square"></i> Report
+                </x-side-link>
             </li>
             <li>
-                <x-side-link> <i class="fa-regular fa-circle-left"></i> Sign out </x-side-link>
+                <x-side-link href='#'> <i class="fa-regul ar fa-circle-left"></i> Sign out
+                </x-side-link>
             </li>
 
         </ul>

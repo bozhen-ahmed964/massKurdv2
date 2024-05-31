@@ -11,11 +11,11 @@
 
 </head>
 
-<body>
+<body class="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0">
     <x-sidebar />
 
     <div class="p-4 sm:ml-64">
-        <div class="grid grid-cols-3 gap-4 mb-4">
+        {{-- <div class="grid grid-cols-3 gap-4 mb-4">
             <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
                 <p class="text-2xl text-gray-400 dark:text-gray-500">
                     <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -43,11 +43,10 @@
                     </svg>
                 </p>
             </div>
-        </div>
+        </div> --}}
         <div class="h-48 mb-4 rounded">
             {{ $slot }}
         </div>
-
     </div>
     </div>
 

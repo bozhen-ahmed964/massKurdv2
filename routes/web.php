@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MemberList;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', function () {
@@ -7,9 +8,7 @@ Route::get('/dashboard', function () {
 })->name('dashboardPage');
 
 
-Route::get('/member', function () {
-    return view('memberList');
-})->name('memberPage');
+Route::get('/member', [MemberList::class, 'index'])->name('memberPage');
 
 
 Route::get('/trainer', function () {

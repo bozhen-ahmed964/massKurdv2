@@ -13,26 +13,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('members', function (Blueprint $table) {
+        Schema::create('member_trainer', function (Blueprint $table) {
             $table->id();
-            $table->string('full_name');
-            $table->string('age');
-            $table->string('gender');
-            $table->string('phone_number');
-            $table->string('exercise_type');
-            $table->string('weight');
-            $table->string('height');
-            $table->date('start_date');
-            $table->date('expire_date');
+            $table->foreignIdFor(Member::class,)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Trainer::class,)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
-
     }
-
-
-
-
-
 
     /**
      * Reverse the migrations.
@@ -40,6 +27,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('member_trainer');
-        Schema::dropIfExists('members');
     }
 };

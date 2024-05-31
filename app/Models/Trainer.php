@@ -15,4 +15,11 @@ class Trainer extends Model
         'phone_number',
         'salery',
     ];
+
+
+    // Trainer hasMany Member
+    public function trainer()
+    {
+        return $this->belongsToMany(Member::class , 'member_trainer');
+    }
 }

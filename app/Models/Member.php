@@ -19,4 +19,11 @@ class Member extends Model
         'start_date',
         'expire_date',
     ];
+
+
+// Members belong to one trainer only
+    public function trainer()
+    {
+        return $this->belongsToMany(Trainer::class , 'member_trainer');
+    }
 }

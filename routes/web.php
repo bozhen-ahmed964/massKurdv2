@@ -7,8 +7,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboardPage');
 
+Route::get('/addMember', function () {
+    return view('addMember');
+})->name('addMemberPage');
 
-Route::get('/member', [MemberList::class, 'index'])->name('memberPage');
+    Route::get('/member', [MemberList::class, 'index'])->name('memberPage');
 
 
 Route::get('/trainer', function () {

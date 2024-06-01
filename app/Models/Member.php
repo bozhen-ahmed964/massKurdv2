@@ -24,6 +24,6 @@ class Member extends Model
 // Members belong to one trainer only
     public function trainer()
     {
-        return $this->belongsToMany(Trainer::class , 'member_trainer');
+        return $this->belongsToMany(Trainer::class , 'member_trainer', 'member_id', 'trainer_id');
     }
 }

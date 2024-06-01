@@ -21,11 +21,11 @@
                     </th>
                     <th scope="col" class="px-6 py-3">
                         <div class="flex items-center">
-                            Exercise Type
+                            Trainer
                     </th>
                     <th scope="col" class="px-6 py-3">
                         <div class="flex items-center">
-                            Trainer
+                            Exercise Type
                     </th>
                     <th scope="col" class="px-6 py-3">
                         <div class="flex items-center">
@@ -56,7 +56,7 @@
                         {{$member->phone_number}}
                     </td>
                     <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{$member->trainer->full_name}}
+                        {{$member->trainer->get('full_name', "not assigned")}}
                     </td>
                     <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {{$member->exercise_type}}

@@ -27,8 +27,8 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         Exercise::factory(40)->create();
-        Member::factory(5)->create();
-        Trainer::factory(5)->create();
+        Member::factory(40)->create();
+        Trainer::factory(10)->create();
 
     }
 }

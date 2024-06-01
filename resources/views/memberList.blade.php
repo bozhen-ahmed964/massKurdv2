@@ -1,6 +1,6 @@
 <x-layout>
     <div class="text-right">
-        <x-button>Add Member + </x-button>
+        <x-a href="{{ route('addMemberPage') }}">Add Member + </x-a>
     </div>
 
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -99,8 +99,9 @@
                 @endforeach
             </tbody>
         </table>
-        <div class="p-3 dark:bg-gray-800">
+
+    </div>
+    <div class="p-3 dark:bg-gray-800">
             {{ $members->links() }}
         </div>
-    </div>
 </x-layout>

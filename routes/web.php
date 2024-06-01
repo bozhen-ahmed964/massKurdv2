@@ -11,7 +11,16 @@ Route::get('/addMember', function () {
     return view('addMember');
 })->name('addMemberPage');
 
-    Route::get('/member', [MemberList::class, 'index'])->name('memberPage');
+
+
+// Fetch All Member
+Route::get('/member', [MemberList::class, 'index'])->name('memberPage');
+// Delete one Member
+Route::delete('/deleteMember/{member}' , [MemberList::class , 'deleteMember'])->name('deleteMember');
+
+
+
+
 
 
 Route::get('/trainer', function () {

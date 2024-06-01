@@ -14,5 +14,15 @@ class MemberList extends Controller
         return view('memberList', [
             'members' => $members,
         ]);
+
     }
+
+
+    public function deleteMember(Request $request, Member $member)
+    {
+        $member->delete();
+        return redirect()->route('memberPage');
+    }
+
+
 }

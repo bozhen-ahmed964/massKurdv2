@@ -11,10 +11,10 @@
 
 </head>
 
-<body class="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0">
+<body class="bg-[url('https://i.redd.it/jlpv3gf20c291.png')] bg-no-repeat bg-cover min-h-screen">
     <x-sidebar />
 
-    <div class="p-4 sm:ml-64">
+    <div class="p-4 sm:ml-64 ">
         {{-- <div class="grid grid-cols-3 gap-4 mb-4">
             <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
                 <p class="text-2xl text-gray-400 dark:text-gray-500">

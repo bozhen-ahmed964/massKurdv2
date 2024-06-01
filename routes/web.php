@@ -22,7 +22,6 @@ Route::delete('/deleteMember/{member}' , [MemberList::class , 'deleteMember'])->
 
 
 
-
 Route::get('/trainer', function () {
     return view('trainer');
 })->name('trainerPage');

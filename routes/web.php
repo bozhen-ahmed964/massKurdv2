@@ -11,6 +11,8 @@ Route::get('/dashboard', function () {
 
 // Fetch All Member
 Route::get('/member', [MemberList::class, 'index'])->name('memberPage');
+// Inster Member
+Route::post('/insterMember' , [MemberList::class , 'insterMember'])->name('insertMemberAction');
 // Delete one Member
 Route::delete('/deleteMember/{member}' , [MemberList::class , 'deleteMember'])->name('deleteMember');
 

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Member extends Model
 {
     use HasFactory;
-    protected $fillabe = [
+    protected $fillable = [
         'full_name',
         'age',
         'gender',

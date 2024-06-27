@@ -1,22 +1,33 @@
 <x-layout>
 
-    <form action="">
+    <form action="{{ route('insertMemberAction') }}" method="POST">
+        @csrf
         <div class="flex justify-center items-center px-5">
             <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 grid-flow-row w-full">
                 <div class="p-5">
                     <div class="group relative z-0 mb-5 w-full">
                         <x-input type="text" name="full_name" id="full_name" label="Full Name" />
+                        @error('full_name')
+                        <x-message>{{ $message }}</x-message>
+                        @enderror
+
                     </div>
                 </div>
 
                 <div class="p-5">
                     <div class="group relative z-0 mb-5 w-full">
                         <x-input type="text" name="age" id="age" label="Age" />
+                        @error('age')
+                        <x-message>{{ $message }}</x-message>
+                        @enderror
                     </div>
                 </div>
                 <div class="p-5">
                     <div class="group relative z-0 mb-5 w-full">
                         <x-input type="text" name="phone_number" id="phone_number" label="Phone Number" />
+                        @error('phone_number')
+                        <x-message>{{ $message }}</x-message>
+                        @enderror
                     </div>
                 </div>
 
@@ -25,6 +36,9 @@
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </x-select>
+                    @error('gender')
+                    <x-message>{{ $message }}</x-message>
+                    @enderror
                 </div>
 
                 <div class="p-5 ">
@@ -33,14 +47,18 @@
                         <option value="bodybuilding">Bodybuilding</option>
                         <option value="fitness">fitness</option>
                     </x-select>
+                    @error('exercise_type')
+                    <x-message>{{ $message }}</x-message>
+                    @enderror
                 </div>
-
-
 
 
                 <div class="p-5 ">
                     <div class="group relative z-0 mb-5 w-full">
                         <x-input type="text" name="weight" id="weight" label="Weight ( Kg )" />
+                        @error('weight')
+                        <x-message>{{ $message }}</x-message>
+                        @enderror
                     </div>
                 </div>
 
@@ -48,29 +66,40 @@
                 <div class="p-5 ">
                     <div class="group relative z-0 mb-5 w-full">
                         <x-input type="text" name="height" id="height" label="Height ( Cm )" />
+                        @error('height')
+                        <x-message>{{ $message }}</x-message>
+                        @enderror
                     </div>
+
                 </div>
 
 
                 <div class="flex items-center">
                     <div class="relative">
-                        <input type="date" class="p-2.5 bg-transparent text-white border rounded-lg border-gray-500">
-
+                        <input type="date" name="start_date"
+                            class="p-2.5 bg-transparent text-white border rounded-lg border-gray-500">
+                        @error('start_date')
+                        <x-message>{{ $message }}</x-message>
+                        @enderror
                     </div>
 
                     <span class="mx-4 text-gray-500">to</span>
 
                     <div class="relative">
-                        <input type="date" class="p-2.5 bg-transparent text-white border rounded-lg border-gray-500">
-
+                        <input type="date" name="expire_date"
+                            class="p-2.5 bg-transparent text-white border rounded-lg border-gray-500">
+                        @error('expire_date')
+                        <x-message>{{ $message }}</x-message>
+                        @enderror
                     </div>
                 </div>
 
                 <div>
 
-                    <x-button>Add Member</x-button>
-                </div>
+                    <x-button typbe="submit">Add Member</x-button>
 
+
+                </div>
             </div>
         </div>
     </form>
@@ -78,10 +107,8 @@
 
 
 
-
-
     <div class="relative overflow-x-auto shadow-md  mt-10">
-        <table class="w-full text-sm text-left rtl:text-right text-white ">
+        <table class="w-full text-sm text-left rtl:text-right text-white">
             <thead class="text-xs text-white text-center bg-blue-800 ">
                 <tr>
                     <th scope="col" class="px-6 py-3">
@@ -165,7 +192,10 @@
                     </td>
                     <td class="px-6 flex  py-4 text-center">
 
+
                         <x-button>Profile</x-button>
+
+
 
                         <form method="POST" action="{{ route('deleteMember', ['member' => $member->id ]) }}">
                             @method('delete')

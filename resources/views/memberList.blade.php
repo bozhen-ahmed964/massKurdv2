@@ -1,6 +1,6 @@
 <x-layout>
 
-<form action="">
+    <form action="">
         <div class="flex justify-center items-center px-5">
             <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 grid-flow-row w-full">
                 <div class="p-5">
@@ -163,16 +163,14 @@
                         </span>
                         @endif
                     </td>
-                    <td class="px-6 py-4 text-center">
-
-
+                    <td class="px-6 flex  py-4 text-center">
 
                         <x-button>Profile</x-button>
-                        <x-button form="deleteForm">Delete</x-button>
-                        <form id="deleteForm" class="hidden" method="POST"
-                            action="{{ route('deleteMember', ['member' => $member->id ]) }}">
+
+                        <form method="POST" action="{{ route('deleteMember', ['member' => $member->id ]) }}">
                             @method('delete')
                             @csrf
+                            <x-button>Delete</x-button>
                         </form>
                     </td>
                 </tr>

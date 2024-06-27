@@ -18,8 +18,10 @@ class MemberList extends Controller
     }
 
 
+
     public function deleteMember(Request $request, Member $member)
     {
+        dd($member);    
         $member->delete();
         return redirect()->route('memberPage');
     }

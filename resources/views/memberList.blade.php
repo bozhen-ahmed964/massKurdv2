@@ -1,9 +1,86 @@
 <x-layout>
-    <div class="text-right">
-        <x-a href="{{ route('addMemberPage') }}">Add Member + </x-a>
-    </div>
 
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+<form action="">
+        <div class="flex justify-center items-center px-5">
+            <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 grid-flow-row w-full">
+                <div class="p-5">
+                    <div class="group relative z-0 mb-5 w-full">
+                        <x-input type="text" name="full_name" id="full_name" label="Full Name" />
+                    </div>
+                </div>
+
+                <div class="p-5">
+                    <div class="group relative z-0 mb-5 w-full">
+                        <x-input type="text" name="age" id="age" label="Age" />
+                    </div>
+                </div>
+                <div class="p-5">
+                    <div class="group relative z-0 mb-5 w-full">
+                        <x-input type="text" name="phone_number" id="phone_number" label="Phone Number" />
+                    </div>
+                </div>
+
+                <div class="p-5">
+                    <x-select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </x-select>
+                </div>
+
+                <div class="p-5 ">
+                    <x-select id="exercise_type" name="exercise_type">
+                        <option value="cardio">Cardio</option>
+                        <option value="bodybuilding">Bodybuilding</option>
+                        <option value="fitness">fitness</option>
+                    </x-select>
+                </div>
+
+
+
+
+                <div class="p-5 ">
+                    <div class="group relative z-0 mb-5 w-full">
+                        <x-input type="text" name="weight" id="weight" label="Weight ( Kg )" />
+                    </div>
+                </div>
+
+
+                <div class="p-5 ">
+                    <div class="group relative z-0 mb-5 w-full">
+                        <x-input type="text" name="height" id="height" label="Height ( Cm )" />
+                    </div>
+                </div>
+
+
+                <div class="flex items-center">
+                    <div class="relative">
+                        <input type="date" class="p-2.5 bg-transparent text-white border rounded-lg border-gray-500">
+
+                    </div>
+
+                    <span class="mx-4 text-gray-500">to</span>
+
+                    <div class="relative">
+                        <input type="date" class="p-2.5 bg-transparent text-white border rounded-lg border-gray-500">
+
+                    </div>
+                </div>
+
+                <div>
+
+                    <x-button>Add Member</x-button>
+                </div>
+
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+
+    <div class="relative overflow-x-auto shadow-md  mt-10">
         <table class="w-full text-sm text-left rtl:text-right text-white ">
             <thead class="text-xs text-white text-center bg-blue-800 ">
                 <tr>
@@ -46,7 +123,7 @@
             </thead>
             <tbody class="text-center">
                 @foreach($members as $member)
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-600">
                     <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {{$member->full_name}}
                     </td>
@@ -79,7 +156,7 @@
                             Deactive
                         </span>
                         @else
-                       <span
+                        <span
                             class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 text-xs font-medium px-2.5 py-0.5 rounded-full">
                             <span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
                             Active
@@ -87,6 +164,9 @@
                         @endif
                     </td>
                     <td class="px-6 py-4 text-center">
+
+
+
                         <x-button>Profile</x-button>
                         <x-button form="deleteForm">Delete</x-button>
                         <form id="deleteForm" class="hidden" method="POST"
@@ -99,9 +179,8 @@
                 @endforeach
             </tbody>
         </table>
-
     </div>
-    <div class="p-3 dark:bg-gray-800">
-            {{ $members->links() }}
-        </div>
+    <div class="p-3  dark:bg-gray-800">
+        {{ $members->links() }}
+    </div>
 </x-layout>

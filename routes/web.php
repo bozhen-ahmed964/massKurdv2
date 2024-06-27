@@ -7,18 +7,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboardPage');
 
-Route::get('/addMember', function () {
-    return view('addMember');
-})->name('addMemberPage');
-
 
 
 // Fetch All Member
 Route::get('/member', [MemberList::class, 'index'])->name('memberPage');
 // Delete one Member
 Route::delete('/deleteMember/{member}' , [MemberList::class , 'deleteMember'])->name('deleteMember');
-
-
 
 
 

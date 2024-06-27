@@ -9,7 +9,7 @@ class MemberList extends Controller
 {
     public function index()
     {
-        $members = Member::with('trainer')->paginate(9);
+        $members = Member::with('trainer')->paginate(12);
 
         return view('memberList', [
             'members' => $members,

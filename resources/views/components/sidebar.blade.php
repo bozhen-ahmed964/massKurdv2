@@ -25,11 +25,6 @@
                 </x-side-link>
             </li>
             <li>
-                <x-side-link href="{{ route('addMemberPage') }}" :active="request()->is('addMember')"><i
-                        class="fa-solid fa-user-group"></i> Add Member
-                </x-side-link>
-            </li>
-            <li>
                 <x-side-link href="{{ route('trainerPage') }}" :active="request()->is('trainer')"><i
                         class="fa-solid fa-user-doctor"></i> Trainer
                 </x-side-link>

@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Trainer;
 use App\Http\Controllers\MemberList;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TrainerController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -17,10 +19,15 @@ Route::post('/insterMember' , [MemberList::class , 'insterMember'])->name('inser
 Route::delete('/deleteMember/{member}' , [MemberList::class , 'deleteMember'])->name('deleteMember');
 
 
+// Fetch All Trainer
+Route::get('/trainer',[TrainerController::class , 'index'])->name('trainerPage');
+// Insert Trainer
+Route::post('/insertTrainer', [TrainerController::class, 'insertTrainer'])->name('insertTrainerAction');
 
-Route::get('/trainer', function () {
-    return view('trainer');
-})->name('trainerPage');
+
+
+
+
 
 
 Route::get('/exercise', function () {

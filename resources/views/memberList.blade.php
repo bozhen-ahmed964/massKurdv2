@@ -94,11 +94,22 @@
                     </div>
                 </div>
 
+                <div class="p-5 ">
+                    <x-select id="trainer_id" name="trainer_id">
+                        <option value="">Select Trainer</option>
+                        @foreach ($trainers as $trainer)
+                        <option value="{{ $trainer->id }}">{{ $trainer->full_name }}</option>
+                        @endforeach
+                    </x-select>
+                    @error('trainer_id')
+                    <x-message>{{ $message }}</x-message>
+                    @enderror
+                </div>
+
+
+
                 <div>
-
                     <x-button typbe="submit">Add Member</x-button>
-
-
                 </div>
             </div>
         </div>

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Trainer extends Model
 {
     use HasFactory;
-    protected $fillabe = [
+    protected $fillable = [
         'full_name',
         'age',
         'gender',
@@ -18,8 +18,8 @@ class Trainer extends Model
 
 
     // Trainer hasMany Member
-    public function trainer()
+    public function members()
     {
-        return $this->belongsToMany(Member::class , 'member_trainer');
+        return $this->hasMany(Member::class);
     }
 }

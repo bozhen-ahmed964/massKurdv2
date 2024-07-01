@@ -33,6 +33,7 @@
 
                 <div class="p-5">
                     <x-select id="gender" name="gender">
+                        <option value="">Select Gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                     </x-select>
@@ -43,6 +44,7 @@
 
                 <div class="p-5 ">
                     <x-select id="exercise_type" name="exercise_type">
+                        <option value="">Select Subscription Type</option>
                         <option value="cardio">Cardio</option>
                         <option value="bodybuilding">Bodybuilding</option>
                         <option value="fitness">fitness</option>
